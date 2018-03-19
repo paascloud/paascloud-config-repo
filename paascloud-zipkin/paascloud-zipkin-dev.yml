@@ -1,0 +1,4 @@
+spring:
+  datasource:
+    schema: classpath:/mysql.sql
+    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_zipkin?characterEncoding=utf8&useSSL=false
