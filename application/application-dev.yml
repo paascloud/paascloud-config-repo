@@ -2,18 +2,18 @@ spring:
   profiles:
     active: dev
   rabbitmq:
-    host:  paascloud-mq-rabbit
+    host: 47.96.173.142
     port: 5672
-    username: '{cipher}AQAqL91a3aSJhd349szCUvRBBOBV9Lk/qIai9REEQ0GtlfgbEBz2ywQ3A6wiRpotG/u2iVZw5x+d9USz9i2+IpXhLzpCwqr1RwOcGBWKKKoxPlpEOkuflXu8kERiUBENqS2BjA/hO8UrhWiywr88Va2cGz309g5aK2pv8VdLuvRN//a6zCFWC5lN9/2GyGtHprX74qQZzqAzAhqbuabh+BF+y4z+sWEg73UrLQbvO6O++n2hrET73INqEJhJQa0gGhzLpaSd2QbehUuii3JVoZ40OgcpcVVfUsx7vCYZJQrFfyn+QADnGaLUGegjOxgnlm1j9/fDKqzROSsymqJYg0/wQTKs2b71X0EecRgMpY/zcT/dJkxSLQH9JCozT52pOus='
-    password: '{cipher}AQA8gCDg/2gVy7kgYOVrCeeNob5cRuDmZD6r1SFH/w4rM3Ea78+ptBLOJTm0vKNHS0RMMnH6L22ZBX5IHsp1VkHH+xAKFrzFcjZxzSrDg4+FknrcSSEZdHZCjDgZdWOMNTiwdMAWmpNG1fxTR1Agx25Bh9RJXRpQa7xbMYSbZHLvXhEpgulXFXa3g/v/dpQz5o5vVEFjTr7auKhw8ucihUbYJJ8BGf+C2Qjfv69Meum90IzrEAUcIxvX/c+j0NFUDUzjhPi7CQZHVGF3quIgv5vS6ro2EfNNJHgYXR2CccEU7Cssglu6jKDheI61uWofMb94A9DHxGQD0W7Csx52fNS3SqyxuB1ngZPHlbpnB5Tc9sR/GZa+HEbFl1XFgsgT0OE='
+    username: guest
+    password: guest
   redis:
-    host: paascloud-db-redis
-    password: 123456
+    host: 47.96.173.142
+    password: paascloud@redis
     port: 6379
     timeout: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
+    username: paascloud
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     initial-size: 10
@@ -74,9 +74,9 @@ paascloud:
       expiredMinutes: 120
   mail:
     host: smtp.sina.com
-    username: '{cipher}AQBxkMO623/IxWVgRuxAl4OdLAM189Gj5SEPqSA6a2Ceki7Dik8X2idSBdESnNKaeCb0Rs5I/HvSBg8Q9rZoFDRzx4lSnoI0Bpm88/s99COY5nNJE4CVNeO5bheWEEPKSW4VjmxfQe9mUt/kT/FIj1uUYA0q1bQzxpbRvzb9qLqLok8VVCuJYQ1gSFXJPSwcO0A21J0W0ElCj4hh+3U9msM1TDFvo8bjv2JKH8OELcyD0DQ4l6Q/S0pvywuQtCnLW3Y7eb0cCUMhv3yOc2Xjx7T54SVKZT6apXojV3Lohsr6eoCP6bAnL3zVe1PDfuhOouznIh6w+ayJWg2JXzmT3cUg+bWoHnj69cvUrGehS1jovwlba7o/TuN9ozQFwb6qujNFZMrEByePn6riroA3Q88O'
-    password: '{cipher}AQASjX+oaNLEu1d4JWxDNVWjAiyGbS1gP5m2VbKYqQC/3MmYIYNH37syr0h8c8EsOYQYusFK0yM+CUaJbvzAJXBcq+l6ekCTm4CkXbXw1OvOtPTmN2pCf0t92P/ZyVCUc8BTbY/4nCL/x3ynsD4pgQqXHmMfXxgg4dG8zM73BToM01foVALi7ce6QIFRumnmTfmu99RobSnucNWmVcdekdfe2ICcOSpc7+vT/G79dcp7G6g384PWESq7DdchR+1JKJkmctgJ6RGZx5wXUiyNdmL3McJ8xkzHG3z/AwVhqk0pgzDsjH5rSU5HjL+LnwW5qUwfy4eBB974EEZ5K1pUEyrHAiDiSP3ZOovJZa0FqG3fbiz/C9wegP2Iyr0m2znHOjs='
-    test-connection: true
+    username: 'your email address'
+    password: 'your email password'
+    test-connection: false
     properties:
       mail:
         smtp:
@@ -87,24 +87,24 @@ paascloud:
             required: true
   aliyun:
     key:
-      accessKeyId: '{cipher}AQBBQ1qiEAwamP8ObpmdvSoRbL0icdLmkrZ749LxNlumy/sYvTet6Gjo/dRlORut477G5qvESxboKnMJ7UvZXhP6zQ7wwbzusDUrZw1SWZWnMvZXcJeZGV3lmfgk0hGQAI7g/LpiEtkC3PeAHdNic4OrS/wR/rhrT1Uj+M9a6dhfmNCdrDqlHKsFqP1asX8NH/xMs/EYjn+F6hw9vqMD9fc1xJ1FqAWoSTb4Q1JUseN4Kf6GAtBgg2CH7lpNPgh6K1cGAwE9OmMxEvIU4Bmrlt8rJQQJsmbS7EbiPE8AW8dG1fZF+/e6nkLLVjAXUKFJ5YNx0AC2s4iovesxj3Vi4eFAFC2qXKnJwlPUPPEOYwF89a/hlK0jkwQd/VXWXN5gkc2tVRS1Qmw3cJTyhxpn72Rx'
-      accessKeySecret: '{cipher}AQBzt+sRrZs7niVUTsdYNS5BPoSHyHpQ3Kqri2ixuSrgK8KRYmPDaTehwqb7b1FPDqmpyW43ElIbz1b5AirEVnB6KQXjVjwEY9zBFzhgx/QgRCFZd/jTWkfJ5juvghRzY6M1LWcOZXN3WppcsN+cVIJjzlhs5zZv/R13W2z+4Wa6T5+ECdGKfIN713vddH0q00pcSUnjaXmg+OlNhwv+GjphT8DLIDczNMPmQfAJALWr0pkzB+JqM/yqHmkSHb5ZL90SrEu3gPn05JTATWun52WrDyDIHcx9RV+UCVXzvBedeEK1pkGeCqalYRKlL2myqQ2tXt249M/hRrKUKGkYkZcDw9Qfrjy4YOOIUFKZd23hoAdXhSuMaKdT3TmYomvxYzQxXsRXqA9ilRntwlRq6JiS'
+      accessKeyId: 'your aliyun accessKeyId'
+      accessKeySecret: 'your aliyun accessKeySecret'
     rocketMq:
-      namesrvAddr: paascloud-mq-rocket:9876
+      namesrvAddr: 47.96.173.142:9876
     sms:
       signName: 快乐学习网
       regionId: cn-beijing
       endpoint:
       endpointName: cn-beijing
-      product: '{cipher}AQAcYurvvvdpXINAfWP5HQEcyLCJM6vFJFV3MJRXU4sy+sWht4eR9Tov9N0nP59wjnn69x+O35hfpizy0QCV0Eot+bXE2P2EJvMaPSvL83alarlbgLyuGJ/cCqFQRJtdi/Tj8pNcq/hBT6mO1QMxSNAe37uspx4z82VFFO6JodlaksVcqUaAjnq9JZO/QGKwYSBc0EcYIlxBsmw4ci1/xZ+ks7grTUZh2cxsPjbA3Aw0FJPqWkMi/wTWEf3xpwzi6BkkdfsGh+8jZ/lT3fLH5q/MIfW6iRyhe2x6sCoDFuT5MPhNNaCNS++QFKUTAtiaB01JiLuf8N1TWi/3sPm0V++ZO3WgCyGsw/F/biJ6fUp7gf/ieqK27zFZZUJF5JpvWU8='
+      product: 'your sms product'
       domain: dysmsapi.aliyuncs.com
   qiniu:
     key:
-      accessKey: '{cipher}AQA1Bqtk/Wt6Onqqx0FNSWHNr0wTzpvNOH9QMa/pa/uMz+J1v90Ci2uKKDoLHjjp61n1lLBbrweKA0s33HKWd8+kvddRSyHq9/LyxYSDbiaUIrL8M9mJAfrNA6Ft5SVZgb/goKPXGvX8QHo0lRURRdTQSfSS3qcccAsywwtFjHIv6OLBka/2moQjujHHYirqwotFOPRGxyRJ/zJ33lwmqsLhF3hVM9uJHs2Zj5tQtGFdNsoL3sQ9DW4Tmc0ZnTuOAbIzwVWE/CI9p4SflU8jbZLyJEBdsinLQD9YLOaIoSwBSpvX7ZJ2DuhZLzPrCXzmXmHTEEEOMfezs8FdjZhfG9rBW0fXQBKYMoZeOxHAQtpACd510FkfBhh29bjnfI8hnNTVYu0GzwDk0NQLvusUe/tU+X7ffgVpYAjuPjqp+u/1Pw=='
-      secretKey: '{cipher}AQASeBRQA98IdqdelB1VPbWh3sKFOAXwpcDWP0alXJiM8FLoSoBI7W2celg9xs5cAkaXOipir9x5WoYGg7XrH8I5WgGnqdxgfTJjXQ4ZC4MTXPsFRoZD3cmu+7jL/QtFqpJLf1YMFQ098CR5jVkfCGsIUTMG+56JfatmnxX+p5jQUKNC607A3oCwyg3w51cPSH0P/z9azTm2O1jwlx/zJkcd+AyFXlJcNPJzui2VQNgKbncT2K1oafbTadXkQma0D2Fsf9rj6px9Dpm4D7AFOSJO02X/ZgrYk+jOmwfds4qKXXCUqASh7N/EjWvR6xs+aZ1wk5nY/+asVmrwIDJf++hRQkT3RJLkfqto0ZSbkJN5F21yUyA1j1g4SWHAfQWlXVoZFlaAOaVlFr6hbmUU0Qd85DCn0OUhg9Fi+FFSFHlvWA=='
+      accessKey: 'your qiniu accessKey'
+      secretKey: 'your qiniu secretKey'
     oss:
-      privateHost: '{cipher}AQBlOWxk68skwXG/hVP3wTmX3tYvbXneOZ6YzZ+lyetnd4n7dZSym/Y3XJdaro2CG8pbkH2ZODKTvMZphL3EW2DCXyxm2yMpkavzuBM4XO0+5QUkQGIUqTXe45Xik3+ZKU6tvWK0IVpFAA/hcc5GjOBSMQhpXfuaP3QLbLwzID4Plu5sAB5j6keXw2Hrl/ShQcKDNSRIaTIrYoz92rl3CY9+9gNXR8/bR33NOwWVIbKFWwJ5M4HkWSgefAbk8G6Ya3IfKAZ3KmifKtKAgHJOJsKFZfH1uQyA7TLjasK68+Wzn8YkqjGGWawr3+X1PULLhvUyIvk2d5Xb2qG7Sk79lPidKM98lpJ6HhmMeqsB6JYAY1oXZESNz9AEKyrvq+phPzRRndtNwxtnGBROB8/8bPX+'
-      publicHost: '{cipher}AQBh9gVzRJdmPY19AeeFTiScQizA/gQ8DRZHXWIgpugxls4OU73dno5BmVDaspHdImi7W8q/FmeZOlEDFuCKab8Ul1yV5YdvqV1bRompa2TWLLeIfC+bux+dMSjE9NFsRbGR46vW4cwk5HlRf/QAvrCxyilWDz3zgYGtJePySeij4hOG3aQA0tyjmbGdRq9nLELhlT6oSyyhXwOX+t4aF1dXqstam1/eF3B1tRshRnPaoDp2cOVxcFIxokBPLsfX+QtDbNAJlBUe78uEXWakyn/YkqCjeTm/dU/cds1hS7awkl7ohnNx1+Y6vySFe+SVzAby/JjMEPx2YfeIyw35Ezf5ruZnShCyct5tfLvPkWLixVueEvZNQedEBdVPVyxULAML7jbAHu9VpDWLqfDby8G+'
+      privateHost: 'your qiniu oss private host'
+      publicHost: 'your qiniu oss public host'
   alipay:
     callback:
       url: http://dev-api.paascloud.net/omc/pay/alipayCallback
