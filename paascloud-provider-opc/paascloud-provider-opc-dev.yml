@@ -1,9 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mysql://47.96.173.142:3306/paascloud_opc?characterEncoding=utf8&useSSL=false
-paascloud:
-  aliyun:
-    rocketMq:
-      instanceName: paascloud-provider-opc
-      consumerGroup: CID_OPC
-      producerGroup: PID_OPC
