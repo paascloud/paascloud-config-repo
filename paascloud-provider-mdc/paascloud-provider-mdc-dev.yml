@@ -1,9 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mysql://47.96.173.142:3306/paascloud_mdc?characterEncoding=utf8&useSSL=false
-paascloud:
-  aliyun:
-    rocketMq:
-      instanceName: paascloud-provider-mdc
-      consumerGroup: CID_MDC
-      producerGroup: PID_MDC
