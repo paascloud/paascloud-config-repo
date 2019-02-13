@@ -31,7 +31,7 @@ spring:
       max-active: 100
       test-on-borrow: true
       time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
+      min-evictable-idle-time-millis: 3000
       web-stat-filter:
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
       stat-view-servlet:
