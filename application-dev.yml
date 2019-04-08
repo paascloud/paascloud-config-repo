@@ -41,7 +41,7 @@ spring:
   mail:
     host: smtp.163.com
     username: liuxuyaose@163.com
-    password: 20130813059liu
+    password: '{cipher}AIAiRZykjXatpTdUgxAKbYkC5TmBLwnF+qupdGoiXnFOlg0WihHMJjjtJi+o8QkBlzgKh7GSBPRdETxhgLod1x1l2H8rVWToieMjJUXCM1eGLfhJaPJY4Z28xnqpAdCTgBpaWxi5wksB47rL7Hsr4kNxgf8VsVlfev3Yh+l7VGAkcC3ktwB2IZoDcJGvXlzvF0fRzCMO4fGzGPDmfrpALxPQ'
     port: 465
     protocol: smtp
     test-connection: false
