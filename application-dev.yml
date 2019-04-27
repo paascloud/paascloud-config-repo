@@ -13,13 +13,13 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: paascloud-mq-rabbit
+    host: '{cipher}AIBDViajZ2ZzLUezFg8fqvZxoUz0HwUJaqW+t7EDUkTAgoo5LghDK2+iK3+AscUHTIUxq2OBqWzipXBC0+sbTIHKT9J1eP8Syv8EEausd7kzzbHWLgbGv7ykfXclwmNROYLKS1atoNT7OVsCRexEivvCL7DsKKtc+R141InvqOOZT7hH3YaqOvdu1kt43eBoZXBNAEjrUL6XJEFVrW7WCqtH'
     port: 5672
-    username: guest
-    password: guest
+    username: '{cipher}AIAlclsi0xxuvqSWDcrIBaDOS7xbKcEdpr5oJzPyvadoARPrye0FR/sn9U/4px2yx3PmpnAhY7PiI6gBtZuFUxfUvtyuXYFLgyswbQFsowvEniAjZM2ms338ar2k/vC3l5vKqr/mGGITxRYh+GVOxUlD6qqJW6PQz/OEY8d/sr4HTZoUFoDPJRwlbpGnpR625F6ibaEnGAx+kf8vjNkYfH7u'
+    password: '{cipher}AICeqVjnE/zAHBzjBGHdsdfu0fzOTA0WVKNtI1FVc5lMJgVXTHNLwOD6b2/i4KIoChJOipGmIfI/mG/owjhW34Cw9QN1Hay0PPBq4Vl5YB847UYNNApusDg1ub3lV9hC7Cxok4MkUI1Dikx3UFbwhZaAjpiZi/gFVfO/oIRnrYO2fLd7YWtCt2Ydzdnwr8GXXS+aC75RJsxGYEudOPq9iEad'
   redis:
-    host: paascloud-db-redis
-    password: paascloud@redis
+    host: 103.248.22.86
+    password: '{cipher}AIBISdhHXTDN67e2Df/sS1k504bMC/TaImOq2l1ghsN6VMGCDWVMAD3PC7k+QIGlo/NBf+UIYqSnxUr6m1hgFFPVcZzBsdtby3nVDQCopTjymJ53DKLXkxM2YN6TOv5uiO1MmSKFPxdaqVQ907L85mKsOdakEsnjF1/Cxv00a5zr2PKKo/syAYnTDP2tVVg+/UAQMiqX7hS6wFgREwZAmAi1'
     port: 6379
     timeout: 0
   datasource:
@@ -40,8 +40,8 @@ spring:
         login-password: admin
   mail:
     host: smtp.163.com
-    username: paascloudTest@163.com
-    password: a123456
+    username: liuxuyaose@163.com
+    password: '{cipher}AIAiRZykjXatpTdUgxAKbYkC5TmBLwnF+qupdGoiXnFOlg0WihHMJjjtJi+o8QkBlzgKh7GSBPRdETxhgLod1x1l2H8rVWToieMjJUXCM1eGLfhJaPJY4Z28xnqpAdCTgBpaWxi5wksB47rL7Hsr4kNxgf8VsVlfev3Yh+l7VGAkcC3ktwB2IZoDcJGvXlzvF0fRzCMO4fGzGPDmfrpALxPQ'
     port: 465
     protocol: smtp
     test-connection: false
@@ -136,4 +136,4 @@ paascloud:
       pcPath: /data/file/qrCode/alipay
       qiniuPath: alipay/QRCode/
   zk:
-    zkAddressList: paascloud-provider-zk:2181
+    zkAddressList: 103.246.114.116:2181
