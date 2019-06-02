@@ -82,11 +82,11 @@ paascloud:
         expireIn: 180
         url: /auth/register,/auth/submitResetPwdEmail,/auth/code/sms
       sms:
-        expireIn: 600
+        expireIn: 6000
         url: /uac/auth/submitResetPwdPhone
-        mobileMaxSendCount: 1
-        ipMaxSendCount: 2
-        totalMaxSendCount: 3
+        mobileMaxSendCount: 100
+        ipMaxSendCount: 100
+        totalMaxSendCount: 100
     oauth2:
       tokenStore: jwt
       clients[0]:
