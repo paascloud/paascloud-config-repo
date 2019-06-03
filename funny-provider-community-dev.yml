@@ -24,6 +24,12 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
+liquibase:
+  change-log: classpath:liquibase/index.xml
+  user: ${spring.datasource.username}
+  password: ${spring.datasource.password}
+  url: ${spring.datasource.url}
+
 security:
   oauth2:
     client:
@@ -60,3 +66,66 @@ paascloud:
       clientId: ${security.oauth2.client.clientId}
       clientSecret: ${security.oauth2.client.clientSecret}
       clientAuthenticationScheme: header
+  security:
+    social:
+      filterProcessesUrl: /auth/callback
+      qq:
+        app-id: 101431061
+        app-secret: 0154c848f45fc705412462d4f99a592c
+        providerId: qq
+      weixin:
+        app-id: wxd99431bbff8305a0
+        app-secret: 60f78681d063590a469f1b297feff3c4
+        providerId: weixin
+    code:
+      image:
+        expireIn: 180
+        url: /auth/register,/auth/submitResetPwdEmail,/auth/code/sms
+      sms:
+        expireIn: 6000
+        url: /uac/auth/submitResetPwdPhone
+        mobileMaxSendCount: 100
+        ipMaxSendCount: 100
+        totalMaxSendCount: 100
+    oauth2:
+      tokenStore: jwt
+      clients[0]:
+        clientId: paascloud-client-uac
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[1]:
+        clientId: paascloud-browser
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[2]:
+        clientId: paascloud-client-gateway
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[3]:
+        clientId: paascloud-client-zipkin
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[4]:
+        clientId: paascloud-client-mdc
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[5]:
+        clientId: paascloud-client-omc
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[6]:
+        clientId: paascloud-client-opc
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[7]:
+        clientId: paascloud-client-tpc
+        clientSecret: paascloudClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
