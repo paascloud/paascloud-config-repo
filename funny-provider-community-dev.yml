@@ -1,0 +1,62 @@
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://paascloud-db-mysql:3306/funny?characterEncoding=utf8&useSSL=false
+
+mybatis:
+  type-aliases-package: com.paascloud.provider.model.domain
+  mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers: com.paascloud.core.mybatis.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+security:
+  oauth2:
+    client:
+      clientId: paascloud-client-uac
+      clientSecret: paascloudClientSecret
+      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+    resource:
+      id: paascloud-resource-uac
+      filter-order: 3
+
+paascloud:
+  enableSqlLogInterceptor: false
+  aliyun:
+    rocketMq:
+      enable: true
+      reliableMessageConsumer: false
+      reliableMessageProducer: true
+      instanceName: paascloud-provider-uac
+      consumerGroup: CID_UAC
+      producerGroup: PID_UAC
+  auth:
+    rest-pwd-url: http://dev-login.paascloud.net/resetPwd?resetPwdKey=
+    active-user-url: http://dev-api.paascloud.net:7979/uac/auth/activeUser/
+    refresh-token-url: http://dev-api.paascloud.net:7979/uac/oauth/token
+  token:
+    interceptor:
+      enable: true
+  oauth2:
+    jwtSigningKey: paascloud
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
