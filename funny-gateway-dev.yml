@@ -122,13 +122,13 @@ security:
     client:
       clientId: paascloud-client-gateway
       clientSecret: paascloudClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://funny-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://funny-gateway:7979/uac/oauth/authorize
     resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
+      user-info-uri: http://funny-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://funny-provider-uac:8000/oauth/token_key
 
 proxy:
   auth:
