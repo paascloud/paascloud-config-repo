@@ -40,7 +40,6 @@ security:
     resource:
       id: paascloud-resource-uac
       filter-order: 3
-      tokenInfoUri: http://funny-gateway:7979/uac/oauth/token
 
 paascloud:
   enableSqlLogInterceptor: false
