@@ -40,7 +40,8 @@ security:
     resource:
       id: paascloud-resource-uac
       filter-order: 3
-      tokenInfoUri: http://funny-gateway:7979/uac/oauth/authorize
+      jwt:
+        key-uri: http://funny-provider-uac:8000/oauth/token_key
 
 paascloud:
   enableSqlLogInterceptor: false
@@ -67,6 +68,7 @@ paascloud:
       clientId: ${security.oauth2.client.clientId}
       clientSecret: ${security.oauth2.client.clientSecret}
       clientAuthenticationScheme: header
+      tokenStore: jwt
   security:
     social:
       filterProcessesUrl: /auth/callback
