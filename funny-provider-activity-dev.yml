@@ -4,134 +4,25 @@ spring:
   jackson:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
-
-  #DATABASE CONFIG
   datasource:
-    druid:
-      url: jdbc:mysql://paascloud-db-mysql:3306/funny?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
-      driver-class-name: com.mysql.jdbc.Driver
-      initial-size: 1
-      max-active: 20
-      min-idle: 1
-      max-wait: 60000
-      validation-query: select 'x'
-      test-on-borrow: false
-      test-on-return: false
-      test-while-idle: true
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      filters: log4j
-      filter:
-        stat:
-          enabled: true
-          log-slow-sql: true
-          slow-sql-millis: 1000
-          merge-sql: true
-          #db-type: mysql
-        slf4j:
-          enabled: true
-          connection-log-enabled: true
-          connection-close-after-log-enabled: true
-          connection-commit-after-log-enabled: true
-          connection-connect-after-log-enabled: true
-          connection-connect-before-log-enabled: true
-          connection-log-error-enabled: true
-          data-source-log-enabled: true
-          result-set-log-enabled: true
-          statement-log-enabled: true
-        wall:
-          enabled: true
-          config:
-            alter-table-allow: false
-            truncate-allow: false
-            drop-table-allow: false
-            #是否允许非以上基本语句的其他语句，缺省关闭，通过这个选项就能够屏蔽DDL
-            none-base-statement-allow: false
-            #检查UPDATE语句是否无where条件，这是有风险的，但不是SQL注入类型的风险
-            update-where-none-check: true
-            #SELECT ... INTO OUTFILE 是否允许，这个是mysql注入攻击的常见手段，缺省是禁止的
-            select-into-outfile-allow: false
-            #是否允许调用Connection.getMetadata方法，这个方法调用会暴露数据库的表信息
-            metadata-allow: true
-          #对被认为是攻击的SQL进行LOG.error输出
-          log-violation: true
-          #对被认为是攻击的SQL抛出SQLExcepton
-          throw-exception: true
-          #db-type: mysql
-      web-stat-filter:
-        enabled: true
-        url-pattern: /*
-        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,*.html'
-        #你可以配置principalSessionName，使得druid能够知道当前的cookie的用户是谁
-        #principal-cookie-name: admin
-        #你可以配置principalSessionName，使得druid能够知道当前的session的用户是谁
-        #principal-session-name: admin
-        #设置profileEnable能够监控单个url调用的sql列表。
-        profile-enable: true
-        #session统计功能
-        session-stat-enable: false
-        #最大session数
-        session-stat-max-count: 100000
-#      stat-view-servlet:
-#        allow: ${GATEWAY_HOST:127.0.0.1}
-#        enabled: true
-#        login-username: admin
-#        login-password: admin
-#        url-pattern: /druid/*
-#        #允许清除记录
-#        reset-enable: false
-#      aop-patterns: com.lgq.boot.service.*
+    url: jdbc:mysql://paascloud-db-mysql:3306/funny?characterEncoding=utf8&useSSL=false
 
-#mybatis
-mybatis-plus:
+mybatis:
+  type-aliases-package: com.paascloud.provider.model.domain
   mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.paascloud.provider.model.domain
-
-  global-config:
-    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
-    id-type: 0
-    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
-    field-strategy: 2
-    #驼峰下划线转换
-    db-column-underline: true
-    #刷新mapper 调试神器
-    refresh-mapper: true
-    #数据库大写下划线转换
-    #capital-mode: true
-    #序列接口实现类配置
-    #key-generator: com.baomidou.springboot.xxx
-    #逻辑删除配置（下面3个配置）
-    logic-delete-value: 1
-    logic-not-delete-value: 0
-    #自定义SQL注入器
-    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
-    #自定义填充策略接口实现
-    meta-object-handler: com.paascloud.core.mybatisplus.SixJustMetaObjectHandler
   configuration:
-    map-underscore-to-camel-case: false
-    cache-enabled: true #配置的缓存的全局开关
-    lazyLoadingEnabled: true #延时加载的开关
-    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+    map-underscore-to-camel-case: true
 
+mapper:
+  mappers: com.paascloud.core.mybatis.MyMapper
+  not-empty: false
+  identity: MYSQL
 
-#mybatis:
-#  type-aliases-package: com.paascloud.provider.model.domain
-#  mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
-#  configuration:
-#    map-underscore-to-camel-case: true
-#
-#mapper:
-#  mappers: com.paascloud.core.mybatis.MyMapper
-#  not-empty: false
-#  identity: MYSQL
-#
-#pagehelper:
-#  helperDialect: mysql
-#  reasonable: true
-#  supportMethodsArguments: true
-#  params: count=countSql
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 liquibase:
   change-log: classpath:liquibase/index.xml
