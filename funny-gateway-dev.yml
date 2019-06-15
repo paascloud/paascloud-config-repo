@@ -148,6 +148,7 @@ proxy:
     routes:
       uac-route: oauth2
       mdc-route: oauth2
+      fmc-route: oauth2
 
 paascloud:
   enableSqlLogInterceptor: false

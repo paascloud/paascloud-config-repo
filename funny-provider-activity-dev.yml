@@ -35,8 +35,8 @@ security:
     client:
       clientId: paascloud-client-uac
       clientSecret: paascloudClientSecret
-      access-token-uri: http://funny-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://funny-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://funny-gateway:7979/fmc/oauth/token
+      user-authorization-uri: http://funny-gateway:7979/fmc/oauth/authorize
     resource:
       id: paascloud-resource-uac
       filter-order: 3
@@ -55,8 +55,8 @@ paascloud:
       producerGroup: PID_UAC
   auth:
     rest-pwd-url: http://dev-login.paascloud.net/resetPwd?resetPwdKey=
-    active-user-url: http://dev-api.paascloud.net:7979/uac/auth/activeUser/
-    refresh-token-url: http://dev-api.paascloud.net:7979/uac/oauth/token
+    active-user-url: http://dev-api.paascloud.net:7979/fmc/auth/activeUser/
+    refresh-token-url: http://dev-api.paascloud.net:7979/fmc/oauth/token
   token:
     interceptor:
       enable: true
