@@ -54,6 +54,19 @@ zuul:
         OkToRetryOnAllOperations: false
         ConnectTimeout: 10000
         ReadTimeout: 10000
+    fpf-route:
+      path: /fpf/**
+      sensitiveHeaders:
+      #      strip-prefix: false
+      service-id: funny-provider-finance
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 10000
+        ReadTimeout: 10000
     uac-route:
       path: /uac/**
       sensitiveHeaders:
@@ -158,6 +171,6 @@ swagger.butler:
   swagger-version: 1.0
   auto-generate-from-zuul-routes: true
 # 指定要生成的范围
-  generate-routes: fmc-route,cmc-route,fpa-route
+  generate-routes: fmc-route,cmc-route,fpa-route,fpf-route
 # 忽略某些路由生成
 #  ignore-routes:
