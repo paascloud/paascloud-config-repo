@@ -125,11 +125,11 @@ paascloud:
       domain: dysmsapi.aliyuncs.com
   qiniu:
     key:
-      accessKey: 'your qiniu accessKey'
-      secretKey: 'your qiniu secretKey'
+      accessKey: 'hpO_To5THipZyKhQDPQnEQytKx04iWAh4c-sAvRF'
+      secretKey: 'UQY3I5OWQdjjRHKsH7PXK-v_LQfbmXfc23sr08eS'
     oss:
-      privateHost: 'your qiniu oss private host'
-      publicHost: 'your qiniu oss public host'
+      privateHost: 'ptlj7u2wf.bkt.clouddn.com/'
+      publicHost: 'ptlj7u2wf.bkt.clouddn.com/'
   alipay:
     callback:
       url: http://dev-api.paascloud.net/omc/pay/alipayCallback
