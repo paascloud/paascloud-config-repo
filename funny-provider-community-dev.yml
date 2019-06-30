@@ -35,8 +35,8 @@ security:
     client:
       clientId: paascloud-client-uac
       clientSecret: paascloudClientSecret
-      access-token-uri: http://funny-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://funny-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://funny-gateway:7979/fmc/oauth/token
+      user-authorization-uri: http://funny-gateway:7979/fmc/oauth/authorize
     resource:
       id: paascloud-resource-uac
       filter-order: 3
