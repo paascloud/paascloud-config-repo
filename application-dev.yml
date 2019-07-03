@@ -108,8 +108,8 @@ info:
 paascloud:
   auth:
     jwt:
-      expiredRemainMinutes: 20
-      expiredMinutes: 120
+      expiredRemainMinutes: 60
+      expiredMinutes: 10080
   aliyun:
     key:
       accessKeyId: 'your aliyun accessKeyId'
