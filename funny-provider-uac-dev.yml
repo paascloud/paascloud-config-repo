@@ -85,9 +85,9 @@ paascloud:
       sms:
         expireIn: 6000
         url: /uac/auth/submitResetPwdPhone
-        mobileMaxSendCount: 100
-        ipMaxSendCount: 100
-        totalMaxSendCount: 100
+        mobileMaxSendCount: 10000
+        ipMaxSendCount: 10000
+        totalMaxSendCount: 10
     oauth2:
       tokenStore: jwt
       clients[0]:
