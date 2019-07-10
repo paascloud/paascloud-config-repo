@@ -141,5 +141,8 @@ paascloud:
 
 netease:
   nimserver:
+    app-key: bab9b7936e03cf00e0af5a60ff63ba9e
+    app-secret: 3ab46137451f
+    nonce: 12345
     user-create: https://api.netease.im/nimserver/user/create.action
     team-create: https://api.netease.im/nimserver/team/create.action
