@@ -138,3 +138,8 @@ paascloud:
       qiniuPath: alipay/QRCode/
   zk:
     zkAddressList: paascloud-provider-zk:2181
+
+netease:
+  nimserver:
+    user-create: https://api.netease.im/nimserver/user/create.action
+    team-create: https://api.netease.im/nimserver/team/create.action
