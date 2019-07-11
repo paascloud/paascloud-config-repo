@@ -146,3 +146,4 @@ netease:
     nonce: 12345
     user-create: https://api.netease.im/nimserver/user/create.action
     team-create: https://api.netease.im/nimserver/team/create.action
+    team-add: https://api.netease.im/nimserver/team/add.action
