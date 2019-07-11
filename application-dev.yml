@@ -145,5 +145,6 @@ netease:
     app-secret: 3ab46137451f
     nonce: 12345
     user-create: https://api.netease.im/nimserver/user/create.action
+    user-update: https://api.netease.im/nimserver/user/updateUinfo.action
     team-create: https://api.netease.im/nimserver/team/create.action
     team-add: https://api.netease.im/nimserver/team/add.action
