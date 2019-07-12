@@ -148,4 +148,4 @@ netease:
     user-update: https://api.netease.im/nimserver/user/updateUinfo.action
     team-create: https://api.netease.im/nimserver/team/create.action
     team-add: https://api.netease.im/nimserver/team/add.action
-    update-team-nick: https://api.netease.im/nimserver/team/add.action
+    update-team-nick: https://api.netease.im/nimserver/team/updateTeamNick.action
