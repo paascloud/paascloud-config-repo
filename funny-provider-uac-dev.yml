@@ -55,7 +55,7 @@ paascloud:
   auth:
     rest-pwd-url: http://dev-login.paascloud.net/resetPwd?resetPwdKey=
     active-user-url: http://dev-api.paascloud.net:7979/fmc/auth/activeUser/
-    refresh-token-url: http://dev-api.paascloud.net:7979/fmc/oauth/token
+    refresh-token-url: http://funny-gateway:7979/fmc/oauth/token
   token:
     interceptor:
       enable: true
