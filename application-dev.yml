@@ -128,8 +128,8 @@ paascloud:
       accessKey: 'hpO_To5THipZyKhQDPQnEQytKx04iWAh4c-sAvRF'
       secretKey: 'UQY3I5OWQdjjRHKsH7PXK-v_LQfbmXfc23sr08eS'
     oss:
-      privateHost: 'ptlj7u2wf.bkt.clouddn.com'
-      publicHost: 'ptlj7u2wf.bkt.clouddn.com'
+      privateHost: 'img.quduoo.com'
+      publicHost: 'img.quduoo.com'
   alipay:
     callback:
       url: http://dev-api.paascloud.net/omc/pay/alipayCallback
