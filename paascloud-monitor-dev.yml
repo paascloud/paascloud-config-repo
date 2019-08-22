@@ -13,7 +13,7 @@ spring:
       notify:
         mail:
           to: liweizhi@fullbloom.cn
-          from: lishi-tech@163.com
+          from: lishi_tech@163.com
       turbine:
         clusters: default
         location: paascloud-monitor
