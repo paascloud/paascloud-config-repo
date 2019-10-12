@@ -41,7 +41,7 @@ security:
       user-info-uri: http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://paascloud-provider-uac:8040/oauth/token_key
 
 paascloud:
   enableSqlLogInterceptor: false
@@ -71,5 +71,5 @@ paascloud:
     callback:
       url: http://api.paascloud.net/omc/pay/alipayCallback
     qrCode:
-      pcPath: E:/File/alipay/QRCode
+      pcPath: /data/file/qrCode/alipay
       qiniuPath: alipay/QRCode/

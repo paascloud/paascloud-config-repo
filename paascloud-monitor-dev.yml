@@ -12,8 +12,8 @@ spring:
         enabled: true
       notify:
         mail:
-          to: xxxxxxxx@163.com
-          from: paascloudTest@163.com
+          to: liweizhi@fullbloom.cn
+          from: lishi_tech@163.com
       turbine:
         clusters: default
         location: paascloud-monitor

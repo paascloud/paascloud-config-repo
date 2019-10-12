@@ -31,7 +31,7 @@ spring:
       max-active: 100
       test-on-borrow: true
       time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
+      min-evictable-idle-time-millis: 3000
       web-stat-filter:
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
       stat-view-servlet:
@@ -40,8 +40,8 @@ spring:
         login-password: admin
   mail:
     host: smtp.163.com
-    username: paascloudTest@163.com
-    password: a123456
+    username: lishi_tech@163.com
+    password: 123iop
     port: 465
     protocol: smtp
     test-connection: false
@@ -69,7 +69,7 @@ spring:
       queue: zipkin
   sleuth:
     sampler:
-      percentage: 0.2
+      percentage: 1
 
 feign:
   hystrix:
